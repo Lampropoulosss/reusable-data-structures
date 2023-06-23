@@ -35,4 +35,5 @@ if (result)
 ### Output
 
 > \> I am another string
+> 
 > \> The Node has been deleted successfully!
