@@ -22,6 +22,7 @@ class LinkedList
 {
 public:
     LinkedList(U);
+    ~LinkedList();
     Node<U> *add(U);
     Node<U> *search(U);
     bool deleteNode(long int);
@@ -126,4 +127,18 @@ bool LinkedList<U>::deleteNode(long int id)
     }
 
     return result;
+}
+
+template <typename U>
+LinkedList<U>::~LinkedList()
+{
+    Node<U> *current = head;
+    Node<U> *next;
+
+    while (current != nullptr)
+    {
+        next = current->getNext();
+        delete current;
+        current = next;
+    }
 }
